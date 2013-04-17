@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//ÅÐ¶ÏÊÇ·ñµÇÂ¼£¬Èç¹ûÃ»ÓÐµÇÂ¼Ìø×ª
+		//ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ðµï¿½Â¼ï¿½ï¿½×ª
 		UserLoginInfo userLoginInfo = getUserLoginInfo();
 		logined = !StringUtils.isBlank(userLoginInfo.getToken());
 		if(!logined){
@@ -55,7 +55,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		});
 		progressBar = (ProgressBar)findViewById(R.id.down_pb);
 		downloadLable = (TextView) findViewById(R.id.textView1);
-		
+
+
 		
 	}
 
@@ -70,17 +71,17 @@ public class MainActivity extends Activity implements OnClickListener {
 				Bundle bundle = msg.getData();
 				switch (msg.what) {
 				case 0:
-					downloadLable.setText(bundle.getString("songTitle")+"¿ªÊ¼ÏÂÔØ");
+					downloadLable.setText(bundle.getString("songTitle")+"ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½");
 					progressBar.setMax(((Long)bundle.getLong("totalSize")).intValue());
 					break;
 				case 1:
 					progressBar.setProgress(((Long)bundle.getLong("currentSize")).intValue());
 					break;
 				case 2:
-					downloadLable.setText(bundle.getString("songTitle")+"½áÊøÏÂÔØ");
+					downloadLable.setText(bundle.getString("songTitle")+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 					break;
 				case 3:
-					downloadLable.setText("ÏÂÔØÍê³É");
+					downloadLable.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 					break;
 				default:
 					break;
